@@ -12,4 +12,4 @@ function Ship(length, timesHit = 0) {
   return ship;
 }
 
-module.exports = Ship;
+export default Ship;
