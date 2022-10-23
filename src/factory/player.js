@@ -23,7 +23,7 @@ function Player() {
     return { x, y };
   }
 
-  return { attack, randomAttack };
+  return { attack, randomAttack, getRandomCoordinates };
 }
 
 export default Player;
