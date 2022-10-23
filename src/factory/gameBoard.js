@@ -73,12 +73,14 @@ function Gameboard() {
           board[cord.x][cord.y + ship.length],
         ];
       }
-      for (let i = cord.y; i < cord.y + ship.length; i++) {
-        neighborCells = [
-          ...neighborCells,
-          board[cord.x - 1][i],
-          board[cord.x + 1][i],
-        ];
+      for (let i = cord.y; i < cord.y + ship.length; i += 1) {
+        if (cord.x - 1 >= 0 && cord.x + 1 < 10) {
+          neighborCells = [
+            ...neighborCells,
+            board[cord.x - 1][i],
+            board[cord.x + 1][i],
+          ];
+        }
       }
     }
     return neighborCells
