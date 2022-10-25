@@ -47,5 +47,9 @@ body {
 }
 
 .hit {
-  background-color: red;
+  background-color: #06a02c;
+}
+
+.miss {
+  background: #ff5c5c;
 }
