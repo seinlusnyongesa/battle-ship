@@ -1,7 +1,7 @@
 // create my board
 // create opponent board
 
-function innit(board, grid) {
+function innit(board, grid, type) {
   const boardDiv = document.createElement("div");
   boardDiv.classList.add("board");
 
@@ -10,7 +10,7 @@ function innit(board, grid) {
     row.classList.add("row");
     for (let j = 0; j < board.board.length; j++) {
       const cell = document.createElement("div");
-      if (board.board[i][j] !== null) {
+      if (type === "player" && board.board[i][j] !== null) {
         cell.classList.add("ship");
       }
       cell.classList.add("cell");

@@ -31,7 +31,13 @@ function Game() {
 
   const computerBoard = randomShips(Gameboard());
   const playerBoard = randomShips(Gameboard());
-  return { randomShips, computerBoard, playerBoard };
+  return {
+    randomShips,
+    computerBoard,
+    playerBoard,
+    player,
+    computer,
+  };
 }
 
 export default Game;

@@ -4,8 +4,13 @@ function Player() {
   function attack(gameboard, cord) {
     if (!alreadyHit.has(JSON.stringify(cord))) {
       alreadyHit.add(JSON.stringify(cord));
-      gameboard.receiveAttack(cord);
+      const info = gameboard.receiveAttack(cord);
+      if (typeof info === "number") {
+        return "hit";
+      }
+      return "miss";
     }
+    return "try again";
   }
 
   function randomAttack(gameboard) {
