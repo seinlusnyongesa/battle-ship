@@ -8,9 +8,6 @@ function Game() {
   const player = Player();
   const computer = Player();
 
-  const computerBoard = Gameboard();
-  const playerBoard = Gameboard();
-
   function randomShips(board) {
     // eslint-disable-next-line no-restricted-syntax
     for (const i of ships) {
@@ -23,6 +20,7 @@ function Game() {
       }
       board.placeShip(cord, newShip, orientation);
     }
+    return board;
   }
 
   function randomOrientation() {
@@ -31,15 +29,9 @@ function Game() {
     return orientation[random];
   }
 
-  const fillComputerBoard = (function (computerBoard) {
-    randomShips(computerBoard);
-  })(computerBoard);
-
-  const fillPlayerBoard = (function fillPlayerBoard(playerBoard) {
-    randomShips(playerBoard);
-  })(playerBoard);
-
-  return { randomShips };
+  const computerBoard = randomShips(Gameboard());
+  const playerBoard = randomShips(Gameboard());
+  return { randomShips, computerBoard, playerBoard };
 }
 
 export default Game;

@@ -4,17 +4,16 @@ import Gameboard from "../factory/gameBoard";
 import Player from "../factory/player";
 
 describe("test game", () => {
-  let playerBoard;
-
   let game;
-  beforeEach(() => {
-    playerBoard = Gameboard();
-    game = Game();
-
-    game.randomShips(playerBoard);
-  });
+  beforeEach(() => (game = Game()));
 
   test("player board should have ships", () => {
+    const { playerBoard } = game;
     expect(playerBoard.allShipsSunk()).toBe(false);
+  });
+
+  test("computer board should have ships", () => {
+    const { computerBoard } = game;
+    expect(computerBoard.allShipsSunk()).toBe(false);
   });
 });
