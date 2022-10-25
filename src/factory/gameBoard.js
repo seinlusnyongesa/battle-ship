@@ -46,6 +46,10 @@ function Gameboard() {
           ...neighborCells,
           board[cord.x - 1][cord.y],
           board[cord.x + ship.length][cord.y],
+          board[cord.x - 1][cord.y - 1],
+          board[cord.x - 1][cord.y + 1],
+          board[cord.x + ship.length][cord.y - 1],
+          board[cord.x + ship.length][cord.y + 1],
         ];
       }
 
@@ -66,12 +70,21 @@ function Gameboard() {
       ) {
         return false;
       }
-      if (cord.y - 1 >= 0 && cord.y + 1 < 10) {
+      if (cord.y - 1 >= 0 && cord.y + ship.length < 10) {
         neighborCells = [
           ...neighborCells,
           board[cord.x][cord.y - 1],
           board[cord.x][cord.y + ship.length],
         ];
+        if (cord.x - 1 >= 0 && cord.x + 1 < 10) {
+          neighborCells = [
+            ...neighborCells,
+            board[cord.x - 1][cord.y - 1],
+            board[cord.x + 1][cord.y - 1],
+            board[cord.x - 1][cord.y + ship.length],
+            board[cord.x + 1][cord.y + ship.length],
+          ];
+        }
       }
       for (let i = cord.y; i < cord.y + ship.length; i += 1) {
         if (cord.x - 1 >= 0 && cord.x + 1 < 10) {

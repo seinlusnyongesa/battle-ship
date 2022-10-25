@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "watch": "jest --watch",
-    "start": "webpack"
+    "start": "webpack",
+    "watchW": "webpack --watch"
   },
   "keywords": [],
   "author": "",
